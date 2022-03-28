@@ -18,10 +18,10 @@ public class CarService {
         cars.add(new Car("KiaRio", "x5", 2019));
     }
     public List<Car> intCar(int count){
-        if(count < 5){
-            return cars.stream().limit(count).collect(Collectors.toList());
-        }else{
+        if(count >= 5 || count <= 0){
             return cars;
+        }else{
+            return cars.stream().limit(count).collect(Collectors.toList());
         }
     }
 }
